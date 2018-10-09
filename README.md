@@ -6,13 +6,19 @@ This a collection of code snippets ready-to-use. Of course they are mainly desig
 
 A very important file is my specially design shell script [btscurl.sh](../toolbox/btscurl.sh). Its purpose is to implement code from the toolbox in a fast way into any project.
 
+    -o: output Filename
+    
     -qu: Some URLs are predefined in the script. You can access them with special keywords:
 
     | keyword   | target          | URL |
     | --------- |:-----------------:|:-----:|
-    | container | React container |     |
+    | container | React container |https://raw.githubusercontent.com/BenTStark/toolbox/master/react_container/|
 
     -u: Any github URL pointing to the raw data of a file (e.g. https://
 
 ### 1. React container
 
+The React Container consists of:
+* The Container which has the connection to the reducer and dispatcher
+* The View where the website interface is created
+* A test file
