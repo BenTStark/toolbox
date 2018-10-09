@@ -4,7 +4,7 @@ This a collection of code snippets ready-to-use. Of course they are mainly desig
 
 ## Get the tools
 
-A very important file is my specially design shell script [btscurl.sh](../toolbox/btscurl.sh). Its purpose is to implement code from the toolbox in a fast way into any project.
+A very important file is my specially design shell script [btscurl.sh](https://github.com/BenTStark/toolbox/blob/master/btscurl.sh). Its purpose is to implement code from the toolbox in a fast way into any project.
 
     -o: output Filename
     
