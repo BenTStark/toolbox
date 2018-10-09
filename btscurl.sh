@@ -1,20 +1,19 @@
 #!/bin/bash
-url=''
-outfile='container'
-quickUrl=''
+outfile="container"
+url=""
+quickUrl=""
 route=0
 
 parse_args()  {
-  case "$1" in 
+  case "$1" in
     -o)
       outfile="$2"
       ;;
     -u)
       url="$2"
-      route=1
       ;;
     -qu)
-      if [ $2 = "container" ] 
+      if [ $2 = "container" ]
       then
         quickUrl="https://raw.githubusercontent.com/BenTStark/toolbox/master/react_container/"
       fi
@@ -24,7 +23,6 @@ parse_args()  {
       exit 1
       ;;
   esac
-  echo "$quickUrl"
 }
 
 while [ "$#" -ge 2 ]
@@ -33,19 +31,25 @@ do
   shift; shift
 done
 
-if [ -z "$url" ] && [ -z "$quickUrl" ] 
+if [ -z "$url" ] && [ -z "$quickUrl" ]
 then
   echo "URL missing!"
   exit 1
 fi
 
-if [ $route = 1 ] 
+if [ $route = 1 ]
 then
    echo "vollständige URL angegeben"
-   curl "$url" -o "$outfile.jsx" 
+   curl "$url" -o "$outfile.jsx"
 else
    echo "Schnellzugriff:"
-   curl "$quickUrl/container.jsx" -o "$outfile.jsx"   
+   curl "$quickUrl/container.jsx" -o "$outfile.jsx"
+   sed -i "s/<Container>/${outfile^}/g" "$outfile.jsx"
+   sed -i "s/<container>/$outfile/g" "$outfile.jsx"
    curl "$quickUrl/container.view.jsx" -o "$outfile.view.jsx"
+   sed -i "s/<Container>/${outfile^}/g" "$outfile.view.jsx"
+   sed -i "s/<container>/$outfile/g" "$outfile.view.jsx"
    curl "$quickUrl/container.test.jsx" -o "$outfile.test.jsx"
+   sed -i "s/<Container>/${outfile^}/g" "$outfile.test.jsx"
+   sed -i "s/<container>/$outfile/g" "$outfile.test.jsx"
 fi
