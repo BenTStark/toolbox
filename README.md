@@ -1,4 +1,4 @@
-# Toolbox
+# Toolbox [![HitCount](http://hits.dwyl.com/BenTStark/toolbox.svg)](http://hits.dwyl.com/BenTStark/toolbox)
 
 This a collection of code snippets ready-to-use. Of course they are mainly designed for my projects and purposes. However you can use them or learn from them anyway.
 
