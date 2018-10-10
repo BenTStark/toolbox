@@ -10,6 +10,8 @@ For quick script access: Add the following code line at the end of your `~/.prof
 ```shell
 export PATH=$PATH:/<yourDirectory>
 ```
+\<yourDirectory\> is the directory where btscurl.sh is located. E.g. make a git clone of the toolbox repository and take the path to the clone repo folder.
+    
 ### Script Parameters
 
     -o: output Filename
